@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutVegPrefab: {fileID: 0}
   Score: 0
-  audiosource: {fileID: 0}
+  audiosource: {fileID: 9195070035892268789}
 --- !u!114 &8354320013393819229
 MonoBehaviour:
   m_ObjectHideFlags: 0

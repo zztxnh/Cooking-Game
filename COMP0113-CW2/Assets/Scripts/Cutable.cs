@@ -41,7 +41,7 @@ public class Cutable : MonoBehaviour
     {
         if (Score >= 5)
         {
-            GameObject cutVeg = NetworkSpawner.SpawnPersistent(this, CutVegPrefab);
+            GameObject cutVeg = NetworkSpawner.Spawn(this, CutVegPrefab);
             cutVeg.transform.position = gameObject.transform.position;
             gameObject.GetComponent<BoxSpawned>().destroy = true;
             Score = 0;

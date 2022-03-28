@@ -27,7 +27,7 @@ public class Box : MonoBehaviour, IUseable
     {
         if (count == 0)
         {
-            var obj = NetworkSpawner.SpawnPersistent(this, ObjPrefab).GetComponents<MonoBehaviour>().Where(mb => mb is IBox).FirstOrDefault() as IBox;
+            var obj = NetworkSpawner.Spawn(this, ObjPrefab).GetComponents<MonoBehaviour>().Where(mb => mb is IBox).FirstOrDefault() as IBox;
             if (obj != null)
             {
                 obj.Attach(controller);

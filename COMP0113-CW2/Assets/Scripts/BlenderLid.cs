@@ -27,7 +27,7 @@ public class BlenderLid : MonoBehaviour
                 {
                     GameObject BlenderJuice = GameObject.Find("BlenderJuice");
                     BlenderJuice.GetComponent<Spawned>().destroy = true;
-                    var obj = NetworkSpawner.SpawnPersistent(this, JuiceGlassPrefab);//.GetComponents<MonoBehaviour>().Where(mb => mb is IBox).FirstOrDefault() as IBox;
+                    var obj = NetworkSpawner.Spawn(this, JuiceGlassPrefab);//.GetComponents<MonoBehaviour>().Where(mb => mb is IBox).FirstOrDefault() as IBox;
                     if (obj != null)
                     {
                         Vector3 newPosition = gameObject.transform.position;

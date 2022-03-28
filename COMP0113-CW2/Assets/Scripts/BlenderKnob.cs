@@ -35,7 +35,7 @@ public class BlenderKnob : MonoBehaviour, IUseable
         {
             Object.GetComponent<BoxSpawned>().destroy = true;
         }
-        GameObject BlenderJuice = NetworkSpawner.SpawnPersistent(this, JuicePrefab);
+        GameObject BlenderJuice = NetworkSpawner.Spawn(this, JuicePrefab);
         BlenderJuice.transform.position = Lid.transform.position;
         Blended = true;
     }
