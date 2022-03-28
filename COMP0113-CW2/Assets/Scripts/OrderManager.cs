@@ -19,7 +19,7 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
     public List<GameObject> dishesPanels = new List<GameObject>();
     public Text moneyText;
     public Text correctOrderText;
-    public AudioSource audiosource;
+
 
     private int moneyCounter;
     private NetworkContext context;
@@ -44,7 +44,7 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
 
     void GenerateRandomOrder(bool owner)
     {
-        int randomNumber = Random.Range(0,2);
+        int randomNumber = Random.Range(0,3);
         //SwitchPanel(dishesPanels[randomNumber]);
 
         if(owner)
