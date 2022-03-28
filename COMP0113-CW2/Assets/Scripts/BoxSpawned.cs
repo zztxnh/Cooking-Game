@@ -21,6 +21,7 @@ public class BoxSpawned : MonoBehaviour, IBox, ISpawnable, INetworkObject, INetw
     public NetworkId Id { get; set; }
     public bool owner; // Used by other scripts
     public bool destroy; // Used by other scripts
+    public bool graspedByOther; // Used by other scripts
 
     public struct Message
     {
@@ -28,13 +29,15 @@ public class BoxSpawned : MonoBehaviour, IBox, ISpawnable, INetworkObject, INetw
         public bool destroy;
         public bool isKin;
         public string parentName;
+        public bool graspedByOther;
 
-        public Message(Transform transform, bool destroy, bool isKin, string parentName)
+        public Message(Transform transform, bool destroy, bool isKin, string parentName, bool graspedByOther)
         {
             this.transform = new TransformMessage(transform);
             this.destroy = destroy;
             this.isKin = isKin;
             this.parentName = parentName;
+            this.graspedByOther = graspedByOther;
         }
     }
 
@@ -69,6 +72,7 @@ public class BoxSpawned : MonoBehaviour, IBox, ISpawnable, INetworkObject, INetw
         gameObject.transform.localRotation = msg.transform.rotation;
         destroy = msg.destroy;
         gameObject.GetComponent<Rigidbody>().isKinematic = msg.isKin;
+        graspedByOther = msg.graspedByOther;
     }
 
     // Checks if object is AttachedGraspable or Graspable and returns "grasped" variable from relevant script
@@ -108,7 +112,7 @@ public class BoxSpawned : MonoBehaviour, IBox, ISpawnable, INetworkObject, INetw
             {
                 parentName = "Scene Manager";
             }
-            context.SendJson(new Message(gameObject.transform, destroy, isKin, parentName));
+            context.SendJson(new Message(gameObject.transform, destroy, isKin, parentName, grasped));
         }
         if (destroy)
         {

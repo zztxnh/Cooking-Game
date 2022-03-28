@@ -19,6 +19,10 @@ public class Graspable : MonoBehaviour, IGraspable
 
     public void Grasp(Hand controller) // Used by Attach in VegSpawned
     {
+        if (gameObject.GetComponent<BoxSpawned>().graspedByOther)
+        {
+            return;
+        }
         var handTransform = controller.transform;
         localGrabPoint = handTransform.InverseTransformPoint(transform.position); //transform.InverseTransformPoint(handTransform.position);
         localGrabRotation = Quaternion.Inverse(handTransform.rotation) * transform.rotation;
@@ -38,6 +42,10 @@ public class Graspable : MonoBehaviour, IGraspable
 
     void IGraspable.Release(Hand controller)
     {
+        if (gameObject.GetComponent<BoxSpawned>().graspedByOther)
+        {
+            return;
+        }
         follow = null;
         grasped = null;
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
