@@ -19,6 +19,7 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
     public List<GameObject> dishesPanels = new List<GameObject>();
     public Text moneyText;
     public Text correctOrderText;
+    public AudioSource audiosource;
 
     private int moneyCounter;
     private NetworkContext context;

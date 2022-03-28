@@ -9,6 +9,7 @@ using UnityEngine;
 public class ServingTray : MonoBehaviour
 {
     private OrderManager parentScript;
+    public AudioSource audiosource;
 
     void OnCollisionEnter(Collision other)
     {
@@ -27,6 +28,7 @@ public class ServingTray : MonoBehaviour
                     Debug.Log("CutTomato: " + tomato.Count);
                     if (loaf.Count == 2 & cheese.Count == 1 & tomato.Count == 1 & children.Length == 5)
                     {
+                        audiosource.Play();
                         Debug.Log("Success!!!!!!!!!");
                         parentScript.SuccessOrder(5, other.gameObject.GetComponent<BoxSpawned>().owner);
                         StartCoroutine(MoveObj(other.gameObject));
@@ -41,6 +43,7 @@ public class ServingTray : MonoBehaviour
                     List<Transform> steak = GetChildrenWithName(other.gameObject.transform, "CookedMeat");
                     if (steak.Count == 1 & children.Length == 2)
                     {
+                        audiosource.Play();
                         Debug.Log("Success!!!!!!!!!");
                         parentScript.SuccessOrder(10, other.gameObject.GetComponent<BoxSpawned>().owner);
                         StartCoroutine(MoveObj(other.gameObject));
