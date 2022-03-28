@@ -9,6 +9,7 @@ using UnityEngine;
 public class ServingTray : MonoBehaviour
 {
     private OrderManager parentScript;
+    public AudioSource audiosource;
 
     void OnCollisionEnter(Collision other)
     {
@@ -18,7 +19,7 @@ public class ServingTray : MonoBehaviour
             Transform[] children = other.gameObject.GetComponentsInChildren<Transform>();
             switch(parentScript.currentPanel.name)
             {
-                case "Sandwich Panel":
+                /*case "Sandwich Panel":
                     List<Transform> loaf = GetChildrenWithName(other.gameObject.transform, "CutLoaf");
                     List<Transform> cheese = GetChildrenWithName(other.gameObject.transform, "CutCutCheese");
                     List<Transform> tomato = GetChildrenWithName(other.gameObject.transform, "CutTomato");
@@ -27,6 +28,7 @@ public class ServingTray : MonoBehaviour
                     Debug.Log("CutTomato: " + tomato.Count);
                     if (loaf.Count == 2 & cheese.Count == 1 & tomato.Count == 1 & children.Length == 5)
                     {
+                        audiosource.Play();
                         Debug.Log("Success!!!!!!!!!");
                         parentScript.SuccessOrder(5, other.gameObject.GetComponent<BoxSpawned>().owner);
                         StartCoroutine(MoveObj(other.gameObject));
@@ -37,12 +39,29 @@ public class ServingTray : MonoBehaviour
                         parentScript.FailOrder();
                     }
                     break;
+                 */
                 case "Steak Panel":
                     List<Transform> steak = GetChildrenWithName(other.gameObject.transform, "CookedMeat");
                     if (steak.Count == 1 & children.Length == 2)
                     {
+                        audiosource.Play();
                         Debug.Log("Success!!!!!!!!!");
                         parentScript.SuccessOrder(10, other.gameObject.GetComponent<BoxSpawned>().owner);
+                        StartCoroutine(MoveObj(other.gameObject));
+                    } 
+                    else
+                    {
+                        Debug.Log("Wrong Order!!!!!!!!!");
+                        parentScript.FailOrder();
+                    }
+                    break;
+                case "LemonJuice Panel":
+                    List<Transform> juice = GetChildrenWithName(other.gameObject.transform, "LemonGlass");
+                    if (juice.Count == 1)
+                    {
+                        audiosource.Play();
+                        Debug.Log("Success!!!!!!!!!");
+                        parentScript.SuccessOrder(3, other.gameObject.GetComponent<BoxSpawned>().owner);
                         StartCoroutine(MoveObj(other.gameObject));
                     } 
                     else
