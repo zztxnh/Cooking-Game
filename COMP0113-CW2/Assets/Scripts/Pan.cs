@@ -7,8 +7,6 @@ using Ubiq.Samples;
 
 public class Pan : MonoBehaviour
 {
-    public AudioSource AudioSource;
-
     private Vector3 newPosition;
     private int counter = 0;
     private GameObject CookedPrefab;
@@ -53,9 +51,7 @@ public class Pan : MonoBehaviour
 
     IEnumerator Cook(GameObject uncookedObj)
     {
-        AudioSource.Play();
         yield return new WaitForSeconds (5);
-        AudioSource.Stop();
         GameObject cookedObj = NetworkSpawner.SpawnPersistent(this, CookedPrefab);
         cookedObj.transform.position = uncookedObj.transform.position;
         uncookedObj.GetComponent<BoxSpawned>().destroy = true;
