@@ -12441,7 +12441,7 @@ PrefabInstance:
     - target: {fileID: 3872913243764472584, guid: dcfa6209fe93b5a449c413f9fde6642b,
         type: 3}
       propertyPath: m_Name
-      value: Orders Manager (1)
+      value: Orders_Manager_right
       objectReference: {fileID: 0}
     - target: {fileID: 3872913243764472586, guid: dcfa6209fe93b5a449c413f9fde6642b,
         type: 3}
@@ -18819,7 +18819,7 @@ PrefabInstance:
     - target: {fileID: 3872913243764472584, guid: dcfa6209fe93b5a449c413f9fde6642b,
         type: 3}
       propertyPath: m_Name
-      value: Orders Manager
+      value: Orders_Manager_left
       objectReference: {fileID: 0}
     - target: {fileID: 3872913243764472586, guid: dcfa6209fe93b5a449c413f9fde6642b,
         type: 3}

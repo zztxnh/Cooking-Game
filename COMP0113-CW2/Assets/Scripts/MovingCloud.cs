@@ -11,7 +11,7 @@ public class MovingCloud : MonoBehaviour
     }
 
     // Update is called once per frame
-    public float speed = 2;
+    public float speed = 1;
     void Update()
     {
         // Moves an object forward, relative to its own rotation.

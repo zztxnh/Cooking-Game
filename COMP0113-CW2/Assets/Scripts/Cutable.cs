@@ -13,14 +13,14 @@ public class Cutable : MonoBehaviour
 
     public GameObject CutVegPrefab; // Public just to read it on Inspector
     public int Score; // Public just to read it on Inspector
-    public AudioSource AudioSource;
+    public AudioSource audiosource;
      
     void OnTriggerEnter(Collider other)
     {
         if (other.name == "Knife" & gameObject.GetComponent<BoxSpawned>().owner)
         {
             Score++;
-            AudioSource.Play();
+            audiosource.Play();
         }
         if (other.name == "CuttingBoard")
         {

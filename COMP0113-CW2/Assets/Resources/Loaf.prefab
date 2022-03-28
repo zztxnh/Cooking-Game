@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutVegPrefab: {fileID: 0}
   Score: 0
-  AudioSource: {fileID: 3041758820630836655}
+  audiosource: {fileID: 0}
 --- !u!82 &3041758820630836655
 AudioSource:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b9b04ba99e5713a4dbd48b6f4b202a31, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
