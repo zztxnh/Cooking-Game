@@ -16,7 +16,7 @@ public class Pan : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.name == "Meat" & counter == 0)
+        if (other.gameObject.name == "Meat" & counter == 0 & other.gameObject.GetComponent<BoxSpawned>().owner)
         {
             CookedName = "Cooked" + other.gameObject.name.Replace("(Clone)", "");
             CookedPrefab = (GameObject)Resources.Load(CookedName, typeof(GameObject));
@@ -29,7 +29,7 @@ public class Pan : MonoBehaviour
             //other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             counter += 1;
             //gameObject.GetComponent<Rigidbody>().isKinematic = true;
-
+            
             StartCoroutine(Cook(other.gameObject));
         }
     }
@@ -56,7 +56,7 @@ public class Pan : MonoBehaviour
         audiosource.Play();
         yield return new WaitForSeconds (5);
         audiosource.Stop();
-        GameObject cookedObj = NetworkSpawner.SpawnPersistent(this, CookedPrefab);
+        GameObject cookedObj = NetworkSpawner.Spawn(this, CookedPrefab);
         cookedObj.transform.position = uncookedObj.transform.position;
         uncookedObj.GetComponent<BoxSpawned>().destroy = true;
     }
