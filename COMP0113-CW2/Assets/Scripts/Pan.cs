@@ -56,6 +56,7 @@ public class Pan : MonoBehaviour
         audiosource.Play();
         yield return new WaitForSeconds (5);
         audiosource.Stop();
+
         GameObject cookedObj = NetworkSpawner.Spawn(this, CookedPrefab);
         cookedObj.transform.position = uncookedObj.transform.position;
         uncookedObj.GetComponent<Spawned>().destroy = true;
