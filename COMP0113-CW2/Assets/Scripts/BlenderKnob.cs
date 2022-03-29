@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class BlenderKnob : MonoBehaviour, IUseable
 {
-    public AudioSource audiosource;
-    
     public GameObject Lid; // To be set from Inspector
     public bool Blended;
 
@@ -32,9 +30,7 @@ public class BlenderKnob : MonoBehaviour, IUseable
     IEnumerator Blend()
     {
         Lid.GetComponent<BlenderLid>().vegs = new List<GameObject>();
-        audiosource.Play();
-        yield return new WaitForSeconds (5);
-        audiosource.Stop();
+        yield return new WaitForSeconds(5);
         foreach (GameObject Object in vegs)
         {
             Object.GetComponent<Spawned>().destroy = true;
