@@ -19,7 +19,7 @@ public class Graspable : MonoBehaviour, IGraspable
 
     public void Grasp(Hand controller) // Used by Attach in VegSpawned
     {
-        if (gameObject.GetComponent<BoxSpawned>().graspedByOther)
+        if (gameObject.GetComponent<Spawned>().graspedByOther)
         {
             return;
         }
@@ -42,7 +42,7 @@ public class Graspable : MonoBehaviour, IGraspable
 
     void IGraspable.Release(Hand controller)
     {
-        if (gameObject.GetComponent<BoxSpawned>().graspedByOther)
+        if (gameObject.GetComponent<Spawned>().graspedByOther)
         {
             return;
         }

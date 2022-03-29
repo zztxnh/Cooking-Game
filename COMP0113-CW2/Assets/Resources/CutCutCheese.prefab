@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7888474530390420916}
   - component: {fileID: 2809356059732457753}
   - component: {fileID: 3568730140863041908}
-  - component: {fileID: 3834959108015966915}
   - component: {fileID: 818849862724145415}
   - component: {fileID: 1103373238396449298}
+  - component: {fileID: 1558597023429359804}
   m_Layer: 0
   m_Name: CutCutCheese
   m_TagString: Untagged
@@ -129,20 +129,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.38399997, y: 0.020479998, z: 0.264}
   m_Center: {x: 0, y: 0.010239999, z: 0}
---- !u!114 &3834959108015966915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3914796829180920319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926c983771018994da4534532b754f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: 0
-  destroy: 0
 --- !u!65 &818849862724145415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -168,3 +154,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af179c8f5fcbca34b8d7a86c882ce80f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1558597023429359804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914796829180920319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe10d3e1808ba44a1aa711795226a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: 0
+  destroy: 0
+  graspedByOther: 0

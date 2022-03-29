@@ -33,7 +33,7 @@ public class BlenderKnob : MonoBehaviour, IUseable
         yield return new WaitForSeconds(5);
         foreach (GameObject Object in vegs)
         {
-            Object.GetComponent<BoxSpawned>().destroy = true;
+            Object.GetComponent<Spawned>().destroy = true;
         }
         GameObject BlenderJuice = NetworkSpawner.Spawn(this, JuicePrefab);
         BlenderJuice.transform.position = Lid.transform.position;

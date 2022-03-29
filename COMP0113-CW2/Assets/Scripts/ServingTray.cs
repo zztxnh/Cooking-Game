@@ -14,7 +14,7 @@ public class ServingTray : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         
-        if (other.gameObject.name == "Plate")
+        if (other.gameObject.name == "Plate" || other.gameObject.name == "SmallPlate")
         {
             Transform[] children = other.gameObject.GetComponentsInChildren<Transform>();
             switch(parentScript.currentPanel.name)
@@ -30,7 +30,7 @@ public class ServingTray : MonoBehaviour
                     {
                         audiosource.Play();
                         Debug.Log("Success!!!!!!!!!");
-                        parentScript.SuccessOrder(5, other.gameObject.GetComponent<BoxSpawned>().owner);
+                        parentScript.SuccessOrder(5, other.gameObject.GetComponent<Spawned>().owner);
                         StartCoroutine(MoveObj(other.gameObject));
                     }
                     else
@@ -46,7 +46,7 @@ public class ServingTray : MonoBehaviour
                     {
                         audiosource.Play();
                         Debug.Log("Success!!!!!!!!!");
-                        parentScript.SuccessOrder(10, other.gameObject.GetComponent<BoxSpawned>().owner);
+                        parentScript.SuccessOrder(10, other.gameObject.GetComponent<Spawned>().owner);
                         StartCoroutine(MoveObj(other.gameObject));
                     } 
                     else
@@ -61,7 +61,7 @@ public class ServingTray : MonoBehaviour
                     {
                         audiosource.Play();
                         Debug.Log("Success!!!!!!!!!");
-                        parentScript.SuccessOrder(3, other.gameObject.GetComponent<BoxSpawned>().owner);
+                        parentScript.SuccessOrder(3, other.gameObject.GetComponent<Spawned>().owner);
                         StartCoroutine(MoveObj(other.gameObject));
                     } 
                     else

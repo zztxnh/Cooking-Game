@@ -13,7 +13,7 @@ public class PlatePlacable : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.name == "Plate" & counter == 0)
+        if ((other.gameObject.name == "Plate" || other.gameObject.name == "SmallPlate") & counter == 0)
         {
             gameObject.transform.parent = other.gameObject.transform;
 

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: -539307502758159714}
   - component: {fileID: 7811695803924413060}
   - component: {fileID: -803074248793135921}
-  - component: {fileID: -5265403777141421149}
   - component: {fileID: -2427943421499979741}
+  - component: {fileID: 2806677897966327201}
   m_Layer: 0
   m_Name: CutLoaf
   m_TagString: Untagged
@@ -127,20 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
---- !u!114 &-5265403777141421149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6542499952100033537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926c983771018994da4534532b754f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: 0
-  destroy: 0
 --- !u!114 &-2427943421499979741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,3 +139,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af179c8f5fcbca34b8d7a86c882ce80f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2806677897966327201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542499952100033537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe10d3e1808ba44a1aa711795226a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: 0
+  destroy: 0
+  graspedByOther: 0

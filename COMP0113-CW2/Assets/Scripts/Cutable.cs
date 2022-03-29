@@ -17,7 +17,7 @@ public class Cutable : MonoBehaviour
      
     void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Knife" & gameObject.GetComponent<BoxSpawned>().owner)
+        if (other.name == "Knife" & gameObject.GetComponent<Spawned>().owner)
         {
             Score++;
             audiosource.Play();
@@ -43,7 +43,7 @@ public class Cutable : MonoBehaviour
         {
             GameObject cutVeg = NetworkSpawner.Spawn(this, CutVegPrefab);
             cutVeg.transform.position = gameObject.transform.position;
-            gameObject.GetComponent<BoxSpawned>().destroy = true;
+            gameObject.GetComponent<Spawned>().destroy = true;
             Score = 0;
         }
     }

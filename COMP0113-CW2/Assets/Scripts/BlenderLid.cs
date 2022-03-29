@@ -15,7 +15,7 @@ public class BlenderLid : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.GetComponent<Graspable>().grasped & other.gameObject.GetComponent<BoxSpawned>().owner)
+        if (!other.gameObject.GetComponent<Graspable>().grasped & other.gameObject.GetComponent<Spawned>().owner)
         {
             if (other.name == "Lemon")
             {
@@ -36,7 +36,7 @@ public class BlenderLid : MonoBehaviour
                         //Hand controller = other.gameObject.GetComponent<Graspable>().grasped;
                         //obj.Attach(controller);
                     }
-                    other.gameObject.GetComponent<BoxSpawned>().destroy = true;
+                    other.gameObject.GetComponent<Spawned>().destroy = true;
                 }
             }
         }

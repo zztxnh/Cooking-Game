@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6921947687665198945}
   - component: {fileID: -6490248130793251070}
   - component: {fileID: -2782644515691440364}
-  - component: {fileID: -8111048190800520391}
   - component: {fileID: 2092709539702967120}
+  - component: {fileID: 4487909673168640394}
+  - component: {fileID: -1408683198871973346}
   m_Layer: 0
   m_Name: LemonGlass
   m_TagString: Untagged
@@ -114,20 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grasped: {fileID: 0}
---- !u!114 &-8111048190800520391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8867392843416684212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926c983771018994da4534532b754f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: 0
-  destroy: 0
 --- !u!65 &2092709539702967120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -141,3 +128,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2324871, y: 0.19999997, z: 0.19999997}
   m_Center: {x: -0.029641027, y: 0.09999999, z: 0}
+--- !u!114 &4487909673168640394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867392843416684212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe10d3e1808ba44a1aa711795226a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: 0
+  destroy: 0
+  graspedByOther: 0
+--- !u!114 &-1408683198871973346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867392843416684212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af179c8f5fcbca34b8d7a86c882ce80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

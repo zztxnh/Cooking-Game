@@ -6,7 +6,7 @@ using Ubiq.Samples;
 using UnityEngine;
 
 /* Spawns a corresponding object when the box is used 
- * - Has IBox interface which should be implemented in BoxSpawned
+ * - Has IBox interface which should be implemented in Spawned
  */
 public interface IBox
 {

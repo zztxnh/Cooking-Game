@@ -44,7 +44,7 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
 
     void GenerateRandomOrder(bool owner)
     {
-        int randomNumber = Random.Range(0,3);
+        int randomNumber = Random.Range(0,2);
         //SwitchPanel(dishesPanels[randomNumber]);
 
         if(owner)
