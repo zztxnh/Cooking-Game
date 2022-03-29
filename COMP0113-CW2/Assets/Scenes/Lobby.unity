@@ -11421,12 +11421,12 @@ GameObject:
   - component: {fileID: 512354041}
   - component: {fileID: 512354040}
   m_Layer: 0
-  m_Name: tutorial
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &512354039
 Transform:
   m_ObjectHideFlags: 0
@@ -11435,7 +11435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512354038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.1, z: 0.5}
+  m_LocalPosition: {x: 0, y: 10.67, z: 0.5}
   m_LocalScale: {x: 12, y: 8, z: 0.1}
   m_Children: []
   m_Father: {fileID: 580832608}
@@ -11472,8 +11472,8 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!65 &512354041
 BoxCollider:
@@ -43533,6 +43533,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 6.475609
       objectReference: {fileID: 0}
+    - target: {fileID: 1243514270914506856, guid: 437a4220cbff02a49a69f018339010c1,
+        type: 3}
+      propertyPath: Tutorial
+      value: 
+      objectReference: {fileID: 512354038}
     - target: {fileID: 1243514271757880656, guid: 437a4220cbff02a49a69f018339010c1,
         type: 3}
       propertyPath: m_Camera
@@ -43677,6 +43682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921662193727680958, guid: 437a4220cbff02a49a69f018339010c1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 7943146837698801023, guid: 437a4220cbff02a49a69f018339010c1,
         type: 3}

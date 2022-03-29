@@ -8,6 +8,7 @@ public class TeamsPanel : MonoBehaviour, INetworkObject, INetworkComponent
 {
     public GameObject Image1; // To be set from Inspector
     public GameObject Image2; // To be set from Inspector
+    public GameObject Tutorial; // To be set from Inspector
 
     public NetworkId Id { get; set; }
 
@@ -25,7 +26,7 @@ public class TeamsPanel : MonoBehaviour, INetworkObject, INetworkComponent
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(StartGame());
     }
 
     public void ChangeImage(int num)
@@ -42,10 +43,18 @@ public class TeamsPanel : MonoBehaviour, INetworkObject, INetworkComponent
         }
     }
 
-    public void StartGame()
+
+    public void StartTutorial()
     {
         context.SendJson(new Message(true));
         PlayerTeam.Host = true;
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame()
+    {
+        Tutorial.SetActive(true);
+        yield return new WaitForSeconds(83);
         SceneManager.LoadScene(1);
     }
 

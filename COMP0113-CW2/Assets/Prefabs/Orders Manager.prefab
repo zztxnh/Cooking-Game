@@ -843,6 +843,7 @@ MonoBehaviour:
   dishesPanels:
   - {fileID: 3872913243113528956}
   - {fileID: 3872913244231815072}
+  - {fileID: 3872913244069354554}
   moneyText: {fileID: 3872913242876379837}
   correctOrderText: {fileID: 3872913244331589629}
 --- !u!1 &3872913243819255496
@@ -1579,10 +1580,10 @@ RectTransform:
   m_Father: {fileID: 3872913244069354949}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 3.5}
+  m_SizeDelta: {x: 10, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4014043497836045290
 CanvasRenderer:
