@@ -29,16 +29,20 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
     public struct Message
     {
         public int orderNumber;
+        public int moneyCounter;
 
-        public Message(int orderNumber)
+        public Message(int orderNumber, int moneyCounter)
         {
             this.orderNumber = orderNumber;
+            this.moneyCounter = moneyCounter;
         }
     }
 
     void INetworkComponent.ProcessMessage(ReferenceCountedSceneGraphMessage message)
     {
         var msg = message.FromJson<Message>();
+        moneyCounter = msg.moneyCounter;
+        moneyText.text = moneyCounter.ToString();
         SwitchPanel(dishesPanels[msg.orderNumber]);
     }
 
@@ -50,7 +54,7 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
         if(owner)
         {
             SwitchPanel(dishesPanels[randomNumber]);
-            context.SendJson(new Message(randomNumber));
+            context.SendJson(new Message(randomNumber, moneyCounter));
             //StartCoroutine(SendMsg(randomNumber));
             Debug.Log("Order Sent!!");
         }    
@@ -101,12 +105,13 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
         yield return new WaitForSeconds(5);
         HidePanel(wrongOrderPanel);
     }
-
+    /*
     IEnumerator SendMsg(int num)
     {
         yield return new WaitForSeconds(0.1f);
         context.SendJson(new Message(num));
     }
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -125,6 +130,7 @@ public class OrderManager : MonoBehaviour, INetworkObject, INetworkComponent
         }
         moneyCounter = 0;
         moneyText.text = moneyCounter.ToString();
+        //SwitchPanel(dishesPanels[1]);
     }
 
     void ShowPanel(GameObject panel)

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7423076255155699752}
   - component: {fileID: 4674991291789063394}
   - component: {fileID: 6524604388825937957}
-  - component: {fileID: 5575021281556366611}
   - component: {fileID: 3392507829259783260}
   - component: {fileID: 679263298500659622}
   m_Layer: 0
@@ -98,19 +97,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3074104668420476315, guid: 706f8690f9bb5c74a82c7287c792ea04, type: 3}
---- !u!114 &5575021281556366611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6620321962567537975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 954357d44d3cd104caefe9a7c32e611f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audiosource: {fileID: 679263298500659622}
 --- !u!54 &3392507829259783260
 Rigidbody:
   m_ObjectHideFlags: 0

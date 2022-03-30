@@ -14,7 +14,7 @@ public class ServingTray : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         
-        if (other.gameObject.name == "Plate" || other.gameObject.name == "SmallPlate")
+        if ((other.gameObject.name == "Plate" || other.gameObject.name == "SmallPlate") & other.gameObject.GetComponent<Spawned>().owner)
         {
             Transform[] children = other.gameObject.GetComponentsInChildren<Transform>();
             switch(parentScript.currentPanel.name)
@@ -97,7 +97,7 @@ public class ServingTray : MonoBehaviour
             t -= 1f*Time.deltaTime;
         }
 
-        Destroy(ToMove);
+        ToMove.GetComponent<Spawned>().destroy = true;
         yield break;
     }
 
