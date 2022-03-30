@@ -14,12 +14,12 @@ public class ServingTray : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         
-        if (other.gameObject.name == "Plate" || other.gameObject.name == "SmallPlate")
+        if ((other.gameObject.name == "Plate" || other.gameObject.name == "SmallPlate") & other.gameObject.GetComponent<Spawned>().owner)
         {
             Transform[] children = other.gameObject.GetComponentsInChildren<Transform>();
             switch(parentScript.currentPanel.name)
             {
-                /*case "Sandwich Panel":
+                case "Sandwich Panel":
                     List<Transform> loaf = GetChildrenWithName(other.gameObject.transform, "CutLoaf");
                     List<Transform> cheese = GetChildrenWithName(other.gameObject.transform, "CutCutCheese");
                     List<Transform> tomato = GetChildrenWithName(other.gameObject.transform, "CutTomato");
@@ -39,7 +39,6 @@ public class ServingTray : MonoBehaviour
                         parentScript.FailOrder();
                     }
                     break;
-                 */
                 case "Steak Panel":
                     List<Transform> steak = GetChildrenWithName(other.gameObject.transform, "CookedMeat");
                     if (steak.Count == 1 & children.Length == 2)
@@ -98,7 +97,7 @@ public class ServingTray : MonoBehaviour
             t -= 1f*Time.deltaTime;
         }
 
-        Destroy(ToMove);
+        ToMove.GetComponent<Spawned>().destroy = true;
         yield break;
     }
 
